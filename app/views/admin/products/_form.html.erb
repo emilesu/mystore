@@ -1,0 +1,17 @@
+<%= simple_form_for [:admin, @product] do |f| %>
+  <div class="form-group">
+    <%= f.input :title, :label => "品名" %>
+    <%= f.input :description, :label => "简述" %>
+    <%= f.input :price, :label => "价格" %>
+    <%= f.input :quantity, :label => "库存" %>
+    <%= f.input :image, as: :file, :label => "上传主图" %>
+  </div>
+  <%= f.submit "提交", :class => ("btn btn-default"), data: { desabel_with: "Submiting..." } %>
+<% end %>
+
+<div class="text-center">
+  <% if @product.image.present? %>
+    <h4>当前主图</h4>
+    <%= image_tag(@product.image.url) %>
+  <% end %>
+</div>

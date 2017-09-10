@@ -1,0 +1,31 @@
+<h2>Product List</h2>
+
+<p><%= link_to("Add new product", new_admin_product_path, :class => ("btn btn-default pull-right")) %></p>
+
+<table class="table table-responsive">
+  <thead>
+    <th>id</th>
+    <th>品名</th>
+    <th>简述</th>
+    <th>价格</th>
+    <th>库存</th>
+    <th>操作选项</th>
+    <th>创建日期</th>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+    <tr>
+      <td><%= product.id %></td>
+      <td><%= product.title %></td>
+      <td><%= simple_format(product.description) %></td>
+      <td><%= product.price %></td>
+      <td><%= product.quantity %></td>
+      <td>
+        <%= link_to("编辑", edit_admin_product_path(product)) %> |
+        <%= link_to("删除", admin_product_path(product), method: :delete, data: { confirm: "你确定要删除吗?" }) %>
+      </td>
+      <td><%= product.created_at %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

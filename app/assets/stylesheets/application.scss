@@ -16,3 +16,17 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
+
+html {
+  height: 100%;                                        // footer固定底部
+}
+
+body {
+  padding-top: 70px;                                  // 腾出navbar的遮挡空间
+  min-height: 100%;                                   // footer固定底部
+  display: flex;                                      // footer固定底部
+  flex-direction: column;                             // footer固定底部
+  .content {
+    flex: 1;                                           // footer固定底部
+  }
+}
