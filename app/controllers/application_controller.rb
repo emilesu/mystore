@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+
+  # 宣告current_cart
   helper_method :current_cart
 
   def current_cart
