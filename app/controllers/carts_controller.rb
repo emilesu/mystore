@@ -6,6 +6,10 @@ class CartsController < ApplicationController
     redirect_back(fallback_location: carts_path)
   end
 
+  def checkout
+    @order = Order.new
+  end
+
 
 
 end
