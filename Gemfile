@@ -49,6 +49,10 @@ gem 'letter_opener', group: :development
 # 有限状态机
 gem 'aasm'
 
+# 七牛云
+gem 'carrierwave-qiniu'
+gem 'qiniu-rs'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
