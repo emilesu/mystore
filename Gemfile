@@ -52,6 +52,7 @@ gem 'aasm'
 # 七牛云
 gem 'carrierwave-qiniu'
 gem 'qiniu-rs'
+gem 'figaro'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
