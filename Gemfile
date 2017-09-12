@@ -46,6 +46,9 @@ gem 'mini_magick'
 # 预览邮件
 gem 'letter_opener', group: :development
 
+# 有限状态机
+gem 'aasm'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
