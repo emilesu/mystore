@@ -12,6 +12,7 @@ class Admin::OrdersController < AdminController
   def ship
     @order = Order.find(params[:id])
     @order.ship!
+    OrderMailer.notify_ship(@order).deliver!
     redirect_back(fallback_location: admin_order_path)
   end
 
@@ -24,6 +25,7 @@ class Admin::OrdersController < AdminController
   def cancel
     @order = Order.find(params[:id])
     @order.cancel_order!
+    OrderMailer.notify_cancel(@order).deliver!
     redirect_back(fallback_location: admin_order_path)
   end
 

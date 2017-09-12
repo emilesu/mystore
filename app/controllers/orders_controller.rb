@@ -30,6 +30,7 @@ class OrdersController < ApplicationController
     @product_lists = @order.product_lists
   end
 
+  # 支付
   def pay_whit_alipay
     @order = Order.find_by_token(params[:id])
     @order.set_payment_with!("alipay")
@@ -44,6 +45,14 @@ class OrdersController < ApplicationController
     @order.make_payment!
 
     redirect_to order_path(@order.token), notice: "使用微信完成支付"
+  end
+
+  # 用户取消订单
+  def apply_to_cancel
+    @order = Order.find_by_token(params[:id])
+    OrderMailer.apply_cancel(@order).deliver!
+    flash[:notice] = "已提交申请"
+    redirect_back(fallback_location: order_path(@order.token))
   end
 
 
