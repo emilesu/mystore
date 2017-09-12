@@ -21,7 +21,12 @@ Rails.application.routes.draw do
 
   resources :cart_items
 
-  resources :orders
+  resources :orders do
+    member do
+      post :pay_whit_alipay
+      post :pay_whit_wechat
+    end
+  end
 
   namespace :account do
     resources :orders
