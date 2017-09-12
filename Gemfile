@@ -43,6 +43,9 @@ gem 'font-awesome-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 
+# 预览邮件
+gem 'letter_opener', group: :development
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
