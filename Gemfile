@@ -53,6 +53,12 @@ gem 'carrierwave-qiniu'
 gem 'qiniu-rs'
 gem 'figaro'
 
+# facebook/github登录
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem 'omniauth-github'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
